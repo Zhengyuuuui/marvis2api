@@ -1,0 +1,39 @@
+# ---- runtime / logs ----
+*.log
+*.pid
+provider.log
+bridge.log
+
+# ---- secrets & session state ----
+# 真实凭证配置（只提交 config.example.toml）
+config.toml
+config.toml.local-bak
+.env
+*.secret
+
+# ---- 编译产物（只提交源码 .m/.c）----
+uskey-probe/probe
+uskey-probe/probe2
+uskey-probe/probe3
+uskey-probe/gen_offline
+uskey-probe/uskey-gen
+
+# ---- reversin 中间产物 ----
+uskey-probe/__pycache__/
+uskey-probe/*.o
+uskey-probe/*.dSYM/
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+
+# ---- 抓包 / 离线包（体积大，不入库）----
+marvis-copy/
+*.asar
+*.jsonl
+/tmp-*
+
+# ---- editor ----
+.idea/
+.vscode/
+*.swp

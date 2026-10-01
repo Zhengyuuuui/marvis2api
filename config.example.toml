@@ -1,0 +1,42 @@
+# Marvis Bridge 配置模板
+# 复制为 config.toml 并填入你自己的凭证（从已登录客户端抓包获取）
+#   cp config.example.toml config.toml
+
+[marvis]
+# 上游推理端点（标准 OpenAI 协议）
+base_url = "https://yybadaccess.3g.qq.com"
+chat_path = "/v1/chat/completions"
+
+# ---- 鉴权（从你本机 Marvis 客户端抓包获取，见 README「凭证获取」）----
+openid = "<YOUR_OPENID>"
+access_token = "<YOUR_mv_TOKEN>"
+login_type = "6"
+device_guid = "<YOUR_DEVICE_GUID>"
+
+# Ual-Access-MarvisExt 里的 uskey（运行时由 provider 覆盖；此处可留空）
+uskey = ""
+
+os_version = "macOS-15.6.1-arm64-arm-64bit"
+client_version = "1.0.0.10371"
+client_platform = "Mac"
+client_platform_version = "1.0.0.10634"
+
+# ---- 默认模型（服务端自动路由）----
+default_model = "main-auto"
+
+# ---- 本地服务 ----
+host = "127.0.0.1"
+port = 4605
+proxy_port = 4606
+
+# ---- uskey 来源: provider | mitm | config ----
+uskey_source = "provider"
+uskey_provider_host = "127.0.0.1"
+uskey_provider_port = 4607
+uskey_appkey = "0MAC06Y3ZMNM1MH4"
+uskey_appver = "1.0.0.10634"
+uskey_bus_id = "marvis_client"
+uskey_businfo = "{}"
+uskey_fallback_random = true
+
+debug = true
